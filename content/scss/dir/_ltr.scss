@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+$mainFont: 'Oswald', sans-serif;
+
+
+
+$s: left;
+$e: right;
+
+$n: -1;
+$p: 1;
+
+body {
+  direction: ltr;
+  font-family: $mainFont;
+}

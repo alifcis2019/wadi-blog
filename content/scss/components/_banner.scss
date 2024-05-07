@@ -1,0 +1,46 @@
+.banner {
+    background-color: #CADBCE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-block: 10px;
+    max-height: 164px;
+    &__header {
+        font-weight: 600;
+        font-family: $mainFont;
+        font-size: 38px;
+        line-height: 56.32px;
+        color: #333333;
+        margin: 0;
+        max-width: max-content;
+        @include responsive (max , 991px) {
+            font-size: 32px;
+            line-height: 47.42px;
+        }
+        @include responsive (max , 480px) {
+            font-size: 20px;
+            line-height: 29.64px;
+        }
+    }
+    &__desc {
+        font-weight: 400;
+        font-family: $mainFont;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #4C4C4C;
+        margin: 0;
+        max-width: 600px;
+        text-align: center;
+        @include responsive (max , 991px) {
+            font-size: 14px;
+            line-height: 21px;
+        }
+        @include responsive (max , 991px) {
+            font-size: 10px;
+            line-height: 15px;
+            max-width: 234px;
+            text-align: center;
+        }
+    }
+}

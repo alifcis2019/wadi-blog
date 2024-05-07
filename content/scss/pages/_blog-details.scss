@@ -1,0 +1,328 @@
+.blog-details {
+    margin-top: 50px;
+
+    &__header {
+        .title {
+            font-family: $mainFont;
+            color: #2C2C2C;
+            font-weight: 700;
+            font-size: 55px;
+            text-align: center;
+            max-width: 950px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+
+            @include responsive (max, 991px) {
+                font-size: 30px;
+                max-width: 520px;
+                margin-top: 20px;
+            }
+
+            @include responsive (max, 600px) {
+                font-size: 22px;
+                max-width: 300px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+
+        }
+
+        &__time {
+            @include responsive (max, 600px) {
+                gap: 8px !important;
+            }
+        }
+    }
+
+    &__item {
+        width: 100%;
+        margin-top: 30px;
+
+        @include responsive (max, 991px) {
+            margin-top: 15px;
+        }
+
+        &__image {
+            width: 100%;
+            height: 640px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+
+            @include responsive (max, 991px) {
+                height: 400px;
+            }
+            @include responsive (max, 991px) {
+                height: 182px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__details {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            .descreption {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+
+                p {
+                    max-width: 815px;
+                    font-size: 24px;
+                    font-weight: 200;
+
+                    @include responsive (max, 991px) {
+                        width: 590px;
+                        font-size: 16px;
+                    }
+                    @include responsive (max, 600px) {
+                        width: 294px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .image-2 {
+                width: 815px;
+                height: 490px;
+                border-radius: 8px;
+                overflow: hidden;
+                margin-block: 20px;
+
+                @include responsive (max, 991px) {
+                    width: 590px;
+                    height: 350px;
+                }
+                @include responsive (max, 600px) {
+                    width: 294px;
+                    height: 176px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .hedaer-2 {
+                position: relative;
+                padding-left: 30px;
+                width: 815px;
+                margin-block: 30px;
+
+                @include responsive (max, 991px) {
+                    width: 590px;
+                }
+                @include responsive (max, 991px) {
+                    width: 294px;
+                }
+
+                p {
+                    font-family: $mainFont;
+                    font-weight: 600;
+                    font-size: 32px;
+                    width: 750px;
+
+                    @include responsive (max, 991px) {
+                        width: 570px;
+                        font-size: 20px;
+                    }
+                    @include responsive (max, 991px) {
+                        width: 275px;
+                        font-size: 20px;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 100px;
+                    left: 0%;
+                    background-color: #317640;
+
+                    @include responsive (max, 991px) {
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__recomended {
+        margin-block: 30px;
+
+        .header {
+            font-weight: 600;
+            font-size: 40px;
+            font-family: $mainFont;
+            margin-bottom: 30px;
+            @include responsive (max,600px) {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @include responsive (max,600px) {
+                row-gap: 24px;
+            }
+            &__card {
+                width: calc((100% / 3) - 20px);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px !important;
+
+                .blog__container__card__details {
+                    gap: 8px;
+                }
+
+                @include responsive (max, 991px) {
+                    width: calc((100% / 2) - 20px);
+                }
+
+                @include responsive (max, 600px) {
+                    width: 100%;
+                }
+
+                .blog__header {
+                    line-height: 1.5;
+                    margin-bottom: 0;
+                    @include responsive(max,600px) {
+                        line-height: 1.2;
+                        font-size: 18px;
+                    }
+                }
+                .blog__descreption {
+                    @include responsive (max , 600px) {
+                        font-size: 10px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    @include responsive(max, 991px) {
+                        display: none;
+                    }
+
+                    @include responsive(max, 600px) {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+
+    &__footer {
+        .header {
+            font-size: 24px;
+            font-family: $mainFont;
+            color: #2C2C2C;
+            font-weight: 500;
+            @include responsive (max,600px) {
+                font-size: 16px;
+            }
+            p {
+                margin-bottom: 0;
+
+                &:nth-child(2) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #89898B;
+                }
+            }
+        }
+
+        &__share {
+            .social-icons {
+                margin-top: 30px;
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 20px;
+                @include responsive (max,600px) {
+                    gap: 10px;
+                }
+                img {
+                    width: 50px;
+                    height: 75px;
+                    @include responsive (max,600px) {
+                        width: 36px;
+                        height: 52px;
+                    }
+                }
+            }
+
+            .share-copy {
+                cursor: pointer;
+                position: relative;
+                margin-top: 15px;
+                width: 400px;
+                height: 48px;
+                padding-#{$s}: 20px;
+                border-radius: 4px;
+                border: 1px solid #34434B26;
+                color: #8D9CA5;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                @include responsive (max , 600px) {
+                    width: 225px;
+                    height: 25px;
+                    font-size: 8px;
+                }
+                .share-icon {
+                    position: absolute;
+                    #{$e}: 5%;
+                    z-index: 0;
+                }
+            }
+        }
+
+        &__tagged {
+            margin-top: 30px;
+            width: 370px;
+            @include responsive (max,600px) {
+                width: 295px;
+            }
+            .suggestion {
+                margin-top: 20px;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                flex-wrap: wrap;
+                .tagged__btn {
+                    padding: 12px 8px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #DDDDDD;
+                    color: #89898B;
+                    font-weight: 400;
+                    font-size: 16px;
+                    font-family: $mainFont;
+                    @include responsive (max,600px) {
+                        font-size: 12px;
+                    }
+                }
+            }
+            
+        }
+    }
+}

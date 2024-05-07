@@ -1,0 +1,261 @@
+.survey {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+
+    @include responsive(max, 991px) {
+        gap: 50px;
+        margin-top: 30px;
+    }
+
+    @include responsive(max, 600px) {
+        margin-top: 15px;
+    }
+
+    &__header {
+        font-family: $mainFont;
+        font-weight: 500;
+        font-size: 32px;
+        color: #333333;
+
+        @include responsive (max, 991px) {
+            font-size: 20px;
+        }
+
+        @include responsive (max, 600px) {
+            font-size: 16px;
+        }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        @include responsive (max, 600px) {
+            gap: 5px;
+        }
+
+        &__form {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+
+            textarea {
+                width: 525px;
+                height: 120px;
+                border-radius: 8px;
+                border: 1px solid #686868;
+
+                @include responsive (max, 600px) {
+                    width: 100%;
+                    height: 64px;
+                }
+            }
+        }
+
+        .rating,
+        .recommended {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            direction: rtl;
+            padding-#{$s}: 15px;
+            margin-bottom: 10px;
+
+            label {
+                display: block;
+                position: relative;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+
+                @include responsive (max, 600px) {
+                    width: 22.5px;
+                    height: 22.5px;
+                }
+
+                &::after {
+                    transition: all .3s ease-in-out;
+                    -webkit-font-smoothing: antialiased;
+                    position: absolute;
+                    content: "\f006";
+                    color: #8F8F8F;
+                    font-family: fontAwesome;
+                    top: 0;
+                    #{$s}: 0;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 40px;
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+            input:checked+label::after,
+            input:checked~label::after {
+                content: "\f005";
+                color: #FFD233;
+            }
+        }
+
+        .instructor {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            direction: rtl;
+            counter-reset: my-counter 6;
+
+            @include responsive (max, 600px) {
+                gap: 8px;
+            }
+
+            label {
+                display: block;
+                position: relative;
+                cursor: pointer;
+                width: 106px;
+                height: 40px;
+
+                @include responsive (max, 600px) {
+                    width: 40px;
+                }
+
+                counter-increment: my-counter -1;
+
+                &::after {
+                    transition: all .3s ease-in-out;
+                    -webkit-font-smoothing: antialiased;
+                    position: absolute;
+                    content: counter(my-counter);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    border: 1px solid #686868;
+                    color: #333333;
+                    background-color: transparent;
+                    font-family: fontAwesome;
+                    top: 0;
+                    #{$s}: 0;
+                    width: 100%;
+                    height: 40px;
+                    font-size: 20px;
+                    margin-inline: 20px;
+
+                    @include responsive (max, 600px) {
+                        font-size: 11px;
+                        margin-inline: 0px;
+                    }
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+
+
+            input:hover+label::after,
+            input:hover~label::after {
+                background-color: #CADBCE;
+                color: black;
+            }
+
+            input:checked+label::after,
+            input:checked~label::after {
+                background-color: #317640;
+                color: white;
+            }
+        }
+    }
+
+    .submit-survey {
+        width: 70%;
+        background-color: #317640;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+        font-size: 32px;
+        border-radius: 8px;
+        margin: auto;
+        margin-block: 30px;
+        padding-block: 10px;
+
+        @include responsive (max, 991px) {
+            width: 100%;
+            margin-block: 15px;
+        }
+
+        @include responsive (max, 600px) {
+            width: 100%;
+            font-size: 16px;
+            margin-block: 15px;
+        }
+    }
+
+}
+
+.submit-modal {
+    padding: 20px 40px;
+    width: 100%;
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 40px;
+
+        .modal-header {
+            border-bottom: 0;
+            img {
+                @include responsive (max , 600px) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+
+        .modal-body {
+            text-align: center;
+            @include responsive (max,600px) {
+                padding: 0px;
+            }
+            .header {
+                font-weight: 700;
+                font-size: 32px;
+                text-align: center;
+                font-family: $mainFont;
+                color: #1C1C1A;
+                @include responsive (max,600px) {
+                    font-size: 16px;
+                }
+            }
+
+            .desc {
+                font-weight: 400;
+                font-size: 16px;
+                margin-bottom: 0;
+                @include responsive (max,600px) {
+                    font-size: 8px;
+                }
+            }
+        }
+
+        .modal-footer {
+            border-top: 0;
+            width: 100%;
+            .done-btn {
+                width: 100%;
+                background-color: #317640;
+                color: white;
+            }
+        }
+    }
+}
